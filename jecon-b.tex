@@ -1,0 +1,64 @@
+%#!lualatex
+%#BIBTEX upbibtex jecon-b
+
+% Author:	       Shiro Takeda
+% First-written:       <2002/11/02>
+%
+%############################## Main #################################
+
+%% jlreq クラスを利用
+\documentclass[article]{jlreq}
+
+%% 以下は lualatex 用の設定。
+\usepackage[no-math]{fontspec}
+\usepackage{luatexja-fontspec}
+\usepackage{luatexja-preset}
+
+%% natbib.sty を使う。
+\usepackage[longnamesfirst]{natbib}
+\usepackage{newtxtext,newtxmath}
+\usepackage{color}
+\definecolor{MyBrown}{rgb}{0.3,0,0}
+\definecolor{MyBlue}{rgb}{0,0,0.3}
+\definecolor{MyRed}{rgb}{0.6,0,0.1}
+\definecolor{MyGreen}{rgb}{0,0.4,0}
+\usepackage[%
+bookmarks=true,%
+bookmarksnumbered=true,%
+colorlinks=true,%
+linkcolor=MyBlue,%
+citecolor=MyRed,%
+filecolor=MyBlue,%
+urlcolor=MyGreen%
+]{hyperref}
+
+%#####################################################################
+%######################### Document Starts ###########################
+%#####################################################################
+\begin{document}
+
+\verb|\bibliographystyle| に \verb|jecon-b.bst| を指定したもの。
+\vspace{1em}\\
+
+\input{cited-part.tex}
+
+
+
+%% BibTeX スタイルファイルの指定。
+\bibliographystyle{jecon-b}
+
+%% BibTeX データベースファイルの指定。
+%
+% 一個上のフォルダにある jecon-example.bib, jecon-example-unicode.bib を指定。
+\bibliography{jecon-example,jecon-example-unicode}
+
+\end{document}
+
+%#####################################################################
+%######################### Document Ends #############################
+%#####################################################################
+% </pre></body></html>
+% --------------------
+% Local Variables:
+% fill-column: 80
+% End:
